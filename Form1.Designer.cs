@@ -66,9 +66,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(61, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 37);
+            this.label1.Size = new System.Drawing.Size(85, 37);
             this.label1.TabIndex = 2;
-            this.label1.Text = "00 S";
+            this.label1.Text = "10 S";
             // 
             // Form1
             // 
@@ -79,6 +79,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

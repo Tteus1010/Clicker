@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace clickre
 {
+   
     public partial class Form1 : Form
     {
+        public string result;
         bool timerrun = false;
         int Timer = 10;
+        int count = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,20 +25,14 @@ namespace clickre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int count = int.Parse(textBox1.Text);
             count++;
             textBox1.Text = count.ToString();
             if (Timer == 0)
             {
-                var result = MessageBox.Show("Você fez " + textBox1.Text + " Cliques", "Pontuação", MessageBoxButtons.OK);
-                switch(result)
-                {
-                    case DialogResult.OK:
-                    break;
-                };
-                Form2 form = new Form2();
+                result = textBox1.Text;
+                Form5 form = new Form5(result);
                 form.Show();
-                    this.Hide();
+                this.Hide();
             }
         }
 
@@ -43,7 +41,7 @@ namespace clickre
             if(Timer > 0)
             {
                 Timer -=1 ;
-                if(Timer > 9)
+                if(Timer > 10)
                 {
                     label1.Text = Timer + " S";
                 }
