@@ -28,5 +28,12 @@ namespace clickre
             this.Hide();
             form.Show();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            this.Hide();
+            form.Show();
+        }
     }
 }
