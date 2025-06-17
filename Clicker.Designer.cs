@@ -1,6 +1,6 @@
 ﻿namespace clickre
 {
-    partial class Form1
+    partial class Clicker
     {
         /// <summary>
         /// Variável de designer necessária.

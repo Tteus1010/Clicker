@@ -15,12 +15,12 @@ using Mysqlx.Crud;
 
 namespace clickre
 {
-    public partial class Form5 : Form
+    public partial class Congrats : Form
     {
         public string nome = " ";
         public string resultvar;
 
-        public Form5(string result)
+        public Congrats(string result)
         {
             InitializeComponent();
             resultvar = result;
@@ -29,13 +29,13 @@ namespace clickre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = "server = localhost;user = root;pwd = 12345678; database = ranking";
+            string sql = "server = ranking.cp2iq4siiv3a.us-east-2.rds.amazonaws.com;user = admin;pwd = 2303Simon123; database = ranking";
             MySqlConnection conn = new MySqlConnection(sql);
             try
             {
                 conn.Open();
                 nome = textBox1.Text;
-                string query = "insert into rankingatual(nome, pontuacao) Values('" + nome + "', " + resultvar + ")";
+                string query = "insert into rankingAtual(nome, pontuacao) Values('" + nome + "', " + resultvar + ")";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
             }
@@ -44,7 +44,7 @@ namespace clickre
                 MessageBox.Show("erro" + ex);
             }
 
-            Form2 form = new Form2();
+            Menu form = new Menu();
             form.Show();
             conn.Close();
             this.Hide();

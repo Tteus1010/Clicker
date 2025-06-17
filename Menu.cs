@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace clickre
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace clickre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Clicker form = new Clicker();
             this.Hide();
             form.Show();
         }

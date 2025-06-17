@@ -1,6 +1,6 @@
 ﻿namespace clickre
 {
-    partial class Form5
+    partial class Congrats
     {
         /// <summary>
         /// Required designer variable.

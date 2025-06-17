@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 
 namespace clickre
 {
@@ -22,16 +25,18 @@ namespace clickre
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            string sql = "server = localhost;user = root;pwd = 12345678; database = ranking";
-            MySqlConnection conn = new MySqlConnection(sql);
+            ClasseCon ClasseCon = new ClasseCon();
+            ClasseCon.conexao();
+
             try
             {
+                string sql = "server = ranking.cp2iq4siiv3a.us-east-2.rds.amazonaws.com;user = admin;pwd = 2303Simon123; database = ranking";
+                MySqlConnection conn = new MySqlConnection(sql);
+                DataGridView dt = new DataGridView();
                 conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                string query = "select * from rankingatual order by pontuacao desc limit 5;";
+                string query = "select * from rankingAtual order by pontuacao desc limit 5;";
                 da.SelectCommand = new MySqlCommand(query, conn);
-                
-
                 DataTable data = new DataTable();
                 da.Fill(data);
 
@@ -42,15 +47,14 @@ namespace clickre
             }
             catch (Exception ex)
             {
-                MessageBox.Show("erro" + ex);
+                MessageBox.Show("MySQL erro: " + ex);
             }
-            DataGridView dt = new DataGridView();
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            Menu form = new Menu();
             form.Show();
             this.Hide();
         }

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 namespace clickre
 {
    
-    public partial class Form1 : Form
+    public partial class Clicker : Form
     {
         public string result;
         bool timerrun = false;
         int Timer = 10;
         int count = 0;
 
-        public Form1()
+        public Clicker()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace clickre
             if (Timer == 0)
             {
                 result = textBox1.Text;
-                Form5 form = new Form5(result);
+                Congrats form = new Congrats(result);
                 form.Show();
                 this.Hide();
             }
